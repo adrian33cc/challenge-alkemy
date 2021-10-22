@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import RouteProtected from './components/routes/RouteProtected';
 import AuthState from './context/auth/authState';
 import Home from './pages/Home';
 import Login from './pages/Login'
@@ -15,7 +16,10 @@ function App() {
       <Router>
         <Switch>
           <Route exact path='/' component={Login} />
-          <Route exact path='/team' component={Home} />
+          <RouteProtected exact path='/team' component={Home} />
+          <Route>
+            <Redirect to='/team' />
+          </Route>
         </Switch>
       </Router>
       
