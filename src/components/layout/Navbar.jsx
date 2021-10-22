@@ -1,6 +1,6 @@
 import React, {useContext, useEffect} from 'react';
 import { Button, Container, Form, FormLabel, Navbar, NavbarBrand } from 'react-bootstrap';
-import AuthContext from '../../context/auth/AuthContext';
+import AuthContext from '../../context/auth/authContext';
 
 const NavBar = () => {
   
@@ -15,12 +15,6 @@ const NavBar = () => {
     <Navbar bg='dark' variant='dark'>
       <Container className='p-2' >
         <NavbarBrand>Challenge React Alkemy</NavbarBrand>
-
-        <Form>
-          <Form.Group>
-            <Form.Control placeholder='Search Superhero' />
-          </Form.Group>
-        </Form>
 
         {autenticated ? <Button onClick={userLogout}>Cerrar Sesion </Button> : null}
       </Container>
