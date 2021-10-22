@@ -7,5 +7,6 @@ const Heroe = () => {
     </>
    );
 }
+
  
 export default Heroe;

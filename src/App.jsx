@@ -4,6 +4,7 @@ import RouteProtected from './components/routes/RouteProtected';
 import AuthState from './context/auth/authState';
 import Home from './pages/Home';
 import Login from './pages/Login'
+import PageError from "./pages/PageError";
 
 function App() {
   
@@ -17,9 +18,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Login} />
           <RouteProtected exact path='/team' component={Home} />
-          <Route>
-            <Redirect to='/team' />
-          </Route>
+          <Route path='*' component={PageError} />
         </Switch>
       </Router>
       
