@@ -6,7 +6,7 @@ import { Col, Row, Container } from "react-bootstrap";
 
 import { Formik, Form, Field, ErrorMessage } from "formik";
 
-import AuthContext from "../context/auth/AuthContext";
+import AuthContext from "../context/auth/authContext";
 
 const Login = (props) => {
 
@@ -16,7 +16,7 @@ const Login = (props) => {
   useEffect(() => {
     if(autenticated){
       props.history.push('/team')
-      console.log("Esta autenticado")
+      //console.log("Esta autenticado")
     }
   }, [autenticated, props.history])
 
