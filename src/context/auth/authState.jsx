@@ -19,7 +19,7 @@ const AuthState = (props) => {
 
   const loginUser = async (values) => {
     try {
-      const response = await axios.post(`http://challenge-react.alkemy.org`, {
+      const response = await axios.post('https://challenge-react.alkemy.org', {
         email: values.email,
         password: values.password,
       });
@@ -31,8 +31,7 @@ const AuthState = (props) => {
     } catch (error) {
       console.error(error);
       dispatch({
-        type: LOGIN_ERROR,
-        payload: response.data,
+        type: LOGIN_ERROR
       });
     }
   };
