@@ -5,7 +5,7 @@ import {
   USER_AUTHENTICATED,
   USER_LOGOUT,
 } from "../types";
-import AuthContext from "./AuthContext";
+import AuthContext from "./authContext";
 import AuthReducer from "./authReducer";
 import axios from "axios";
 
