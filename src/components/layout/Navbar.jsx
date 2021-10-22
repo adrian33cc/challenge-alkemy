@@ -1,10 +1,15 @@
-import React from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Button, Container, Form, FormLabel, Navbar, NavbarBrand } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import AuthContext from '../../context/auth/AuthContext';
 
 const NavBar = () => {
   
   //const [pagevar, toggleUser,isUser] = useAuth();
+  const authContext = useContext(AuthContext)
+  const {autenticated, userLogout,userAutenticated} = authContext;
+  useEffect(() => {
+    userAutenticated()
+  },[autenticated] )
 
   return ( 
     <Navbar bg='dark' variant='dark'>
@@ -17,7 +22,7 @@ const NavBar = () => {
           </Form.Group>
         </Form>
 
-        <Link to='/login'> <Button> Login </Button> </Link>
+        {autenticated ? <Button onClick={userLogout}>Cerrar Sesion </Button> : null}
       </Container>
     </Navbar>
    );
